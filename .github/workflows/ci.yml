@@ -38,7 +38,7 @@ jobs:
       - run: yarn lint
         if: matrix.node-version == 22
 
-      - run: yarn install mocha@5 --ignore-engines
+      - run: yarn add mocha@5 --dev --ignore-engines
         if: matrix.node-version < 14
 
       - run: yarn run test
