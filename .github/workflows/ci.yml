@@ -33,6 +33,9 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - run: |
-          yarn install
-          yarn run test
+      - run: yarn install
+
+      - run: yarn lint
+        if: matrix.node-version == '22'
+
+      - run: yarn run test

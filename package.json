@@ -10,7 +10,7 @@
   "license": "MIT",
   "scripts": {
     "lint": "eslint . && prettier . --check",
-    "test": "npm run lint && mocha",
+    "test": "mocha",
     "format": "eslint . --fix && prettier . --write"
   },
   "repository": {
