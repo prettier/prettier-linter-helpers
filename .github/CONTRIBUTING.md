@@ -20,7 +20,7 @@ Linting is ran as part of `yarn run test`. The build will fail if there are any 
 
 ## Publishing
 
-- Ensure you are on the master branch locally.
+- Ensure you are on the main branch locally.
 - Update `CHANGELOG.md` and commit.
 - Run the following:
 
