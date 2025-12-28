@@ -10,7 +10,7 @@
   "license": "MIT",
   "scripts": {
     "lint": "eslint .",
-    "test": "npm run lint && mocha",
+    "test": "node --test test/*.test.js",
     "format": "yarn run prettier '**/*.{js,json,md,yml}' --write && yarn run lint --fix"
   },
   "repository": {
@@ -25,12 +25,12 @@
     "fast-diff": "^1.1.2"
   },
   "devDependencies": {
-    "eslint": "^5.6.1",
-    "eslint-config-prettier": "^6.4.0",
-    "eslint-plugin-node": "^7.0.1",
-    "eslint-plugin-prettier": "^3.1.1",
-    "mocha": "^5.2.0",
-    "prettier": "^1.14.3"
+    "@eslint/js": "^9.39.2",
+    "eslint": "^9.39.2",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-n": "^17.23.1  ",
+    "eslint-plugin-prettier": "^5.5.4",
+    "prettier": "^3.7.4"
   },
   "engines": {
     "node": ">=6.0.0"
