@@ -22,6 +22,7 @@
     "url": "https://github.com/prettier/prettier-linter-helpers/issues"
   },
   "homepage": "https://github.com/prettier/prettier-linter-helpers#readme",
+  "files": ["index.js", "index.d.ts"],
   "dependencies": {
     "fast-diff": "^1.1.2"
   },
