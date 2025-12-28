@@ -1,3 +1,5 @@
+// @ts-check
+
 const diff = require('fast-diff');
 
 const LINE_ENDING_RE = /\r\n|[\r\n\u2028\u2029]/;
