@@ -1,29 +1,41 @@
 /**
  * Converts invisible characters to a commonly recognizable visible form.
- * @param str - The string with invisibles to convert.
- * @returns The converted string.
+ * @param {string} str - The string with invisibles to convert.
+ * @returns {string} The converted string.
  */
 export function showInvisibles(str: string): string;
 
-export interface Difference {
-  operation: 'insert' | 'delete' | 'replace';
-  offset: number;
-  insertText?: string | undefined;
-  deleteText?: string | undefined;
-}
+export type Difference =
+  | {
+      operation: 'insert';
+      insertText: string;
+      offset: number;
+    }
+  | {
+      operation: 'delete';
+      deleteText: string;
+      offset: number;
+    }
+  | {
+      operation: 'replace';
+      insertText: string;
+      deleteText: string;
+      offset: number;
+    };
 
-export interface GenerateDifferences {
-  /**
-   * Generate results for differences between source code and formatted version.
-   *
-   * @param source - The original source.
-   * @param prettierSource - The Prettier formatted source.
-   * @returns An array containing { operation, offset, insertText, deleteText }
-   */
-  (source: string, prettierSource: string): Difference[];
-  INSERT: 'insert';
-  DELETE: 'delete';
-  REPLACE: 'replace';
+/**
+ * Generate results for differences between source code and formatted version.
+ *
+ * @param {string} source - The original source.
+ * @param {string} prettierSource - The Prettier formatted source.
+ * @returns {Difference[]} - An array containing { operation, offset, insertText, deleteText }
+ */
+export function generateDifferences(
+  source: string,
+  prettierSource: string
+): Difference[];
+export namespace generateDifferences {
+  let INSERT: 'insert';
+  let DELETE: 'delete';
+  let REPLACE: 'replace';
 }
-
-export const generateDifferences: GenerateDifferences;
