@@ -28,9 +28,10 @@ pnpm run lint
 
 - Ensure you are on the `main` branch locally.
 - Update `CHANGELOG.md` and commit.
-- Run the following:
+- Run the following (replacing `patch` with `minor` or `major` if you want a different range):
 
   ```sh
+  pnpm version patch
   pnpm publish
   git push --follow-tags
   ```
